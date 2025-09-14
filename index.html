@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aishwarya Anil Dede — Portfolio</title>
+  <meta name="description" content="Aishwarya Anil Dede — Cybersecurity Student, Motivational Speaker, UPSC aspirant. Portfolio & projects."/>
+  <link rel="stylesheet" href="style.css" />
+  <!-- model-viewer for 3D glTF embedding -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="assets/images/profile.jpg" alt="Aishwarya" class="avatar"/>
+        <div>
+          <h1>Aishwarya Anil Dede</h1>
+          <p class="title">Cybersecurity Enthusiast • Motivational Speaker • UPSC 2026 Aspirant</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#3d">3D</a>
+        <a href="#contact">Contact</a>
+        <a class="cta" href=""C:\Users\aishw\Downloads\Resume-Aishwarya-Dede (1).pdf"" target="_blank">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h2>Hi — I’m Aishwarya</h2>
+          <p>I’m a final-year B.Sc. Cyber & Digital Science student focused on malware analysis, threat intelligence and digital forensics. I also love giving motivational talks and participating in community heritage projects like fort conservation.</p>
+          <p><strong>Looking for:</strong> Internships in cyber security, research collaborations, and opportunities to grow as a public servant.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#projects">See Projects</a>
+            <a class="btn-outline" href="https://www.youtube.com/channel/UC-REPLACE" target="_blank">YouTube — Dream Tales Studio</a>
+          </div>
+        </div>
+        <div class="hero-3d">
+          <!-- interactive 3D model (glb/gltf) -->
+          <model-viewer src="assets/models/avatar.glb"
+                        alt="3D avatar of Aishwarya"
+                        ar
+                        auto-rotate
+                        camera-controls
+                        style="width:100%;height:400px;">
+          </model-viewer>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="container about">
+      <h2>About me</h2>
+      <p>I’ve conducted cybersecurity awareness sessions, drafted security guidelines for my college, and won the Motivational Speaker Award three years running (2022–2024). I’m preparing for UPSC 2026 with Political Science & IR as my optional.</p>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Education</h3>
+          <p>TY B.Sc. Cyber & Digital Science — MIT ACSC, Pune (2022–2025)</p>
+        </div>
+        <div class="card">
+          <h3>Skills</h3>
+          <ul>
+            <li>Network Forensics, Malware Analysis, Threat Intelligence</li>
+            <li>Tools: Wireshark, Burp Suite, Splunk, IDA</li>
+            <li>Python, Bash, SQL</li>
+            <li>Public speaking & leadership</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Certifications</h3>
+          <ul>
+            <li>Intro to Cybersecurity — Cisco NetAcad</li>
+            <li>Google IT Support / Coursera (sample)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="container projects">
+      <h2>Projects</h2>
+
+      <div class="project-grid">
+        <article class="project">
+          <img src="assets/images/project-1-thumb.jpg" alt="Public Wi-Fi Project"/>
+          <h3>Public Wi-Fi Security Study</h3>
+          <p>Assessment of public Wi-Fi vulnerabilities and mitigation plan. Tools used: Wireshark, packet analysis, TLS checks.</p>
+          <a href="projects/public-wifi-security/README.md" target="_blank">Read more</a>
+        </article>
+
+        <article class="project">
+          <img src="assets/images/project-2-thumb.jpg" alt="Speed Breaker Sensor"/>
+          <h3>Speed Breaker Mapping Sensor</h3>
+          <p>Prototype for smart city road-safety sensor that maps speed breakers and reports to a central server</p>
+          <a href="projects/speed-breaker-sensor/README.md" target="_blank">Read more</a>
+        </article>
+
+        <article class="project">
+          <img src="assets/images/project-3-thumb.jpg" alt="Security Guidelines"/>
+          <h3>Security Guidelines (MIT ACSC)</h3>
+          <p>Drafted actionable security policy and incident response checklist for college systems.</p>
+          <a href="projects/security-guidelines/README.md" target="_blank">Read more</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="3d" class="container models">
+      <h2>3D & Visuals</h2>
+      <p>Interactive 3D model of a fort (used in Gadkille Sanrakshan) and an avatar. Rotate/zoom on desktop & mobile.</p>
+      <model-viewer src="assets/models/fort_model.glb" alt="3D fort model" auto-rotate camera-controls exposure="1" style="width:100%;height:500px;"></model-viewer>
+      <p class="note">Tip: Click & drag to rotate. Use pinch to zoom on mobile.</p>
+    </section>
+
+    <section id="contact" class="container contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a> • LinkedIn: <a href="https://www.linkedin.com/in/your-linkedin">linkedin.com/in/your-linkedin</a></p>
+      <form action="https://formspree.io/f/your-id" method="POST">
+        <input name="name" placeholder="Your name" required />
+        <input name="email" type="email" placeholder="Your email" required />
+        <textarea name="message" placeholder="Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Aishwarya Anil Dede • Built with ❤️ • <a href="https://github.com/<your-username>/aishwarya-dede-portfolio">Source</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
