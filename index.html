@@ -24,7 +24,8 @@
         <a href="#projects">Projects</a>
         <a href="#3d">3D</a>
         <a href="#contact">Contact</a>
-        <a class="cta" href=""C:\Users\aishw\Downloads\Resume-Aishwarya-Dede (1).pdf"" target="_blank">Resume</a>
+        <!-- FIXED Resume Path -->
+        <a class="cta" href="resume/Resume-Aishwarya-Dede (1).pdf" target="_blank">Resume</a>
       </nav>
     </div>
   </header>
@@ -115,31 +116,31 @@
       <model-viewer src="assets/models/fort_model.glb" alt="3D fort model" auto-rotate camera-controls exposure="1" style="width:100%;height:500px;"></model-viewer>
       <p class="note">Tip: Click & drag to rotate. Use pinch to zoom on mobile.</p>
     </section>
+
     <section id="models" class="container models">
-  <h2>3D Models</h2>
+      <h2>3D Models</h2>
+      <model-viewer src="assets/models/laptop.glb"
+                    alt="3D Laptop Model"
+                    auto-rotate camera-controls
+                    style="width:100%; height:400px;">
+      </model-viewer>
 
-  <model-viewer src="assets/models/laptop.glb"
-                alt="3D Laptop Model"
-                auto-rotate camera-controls
-                style="width:100%; height:400px;">
-  </model-viewer>
+      <model-viewer src="assets/models/earth_globe.glb"
+                    alt="3D Earth Globe"
+                    auto-rotate camera-controls
+                    style="width:100%; height:400px;">
+      </model-viewer>
 
-  <model-viewer src="assets/models/earth_globe.glb"
-                alt="3D Earth Globe"
-                auto-rotate camera-controls
-                style="width:100%; height:400px;">
-  </model-viewer>
-
-  <model-viewer src="assets/models/world_globe.glb"
-                alt="3D World Globe"
-                auto-rotate camera-controls
-                style="width:100%; height:400px;">
-  </model-viewer>
-</section>
+      <model-viewer src="assets/models/world_globe.glb"
+                    alt="3D World Globe"
+                    auto-rotate camera-controls
+                    style="width:100%; height:400px;">
+      </model-viewer>
+    </section>
 
     <section id="contact" class="container contact">
       <h2>Contact</h2>
-      <p>Email: <a href="dedeaishwarya10@gmail.com">dedeaishwarya10@gmail.com</a> • LinkedIn: <a href="https://www.linkedin.com/in/your-linkedin">linkedin.com/in/your-linkedin</a></p>
+      <p>Email: <a href="mailto:dedeaishwarya10@gmail.com">dedeaishwarya10@gmail.com</a> • LinkedIn: <a href="https://www.linkedin.com/in/your-linkedin">linkedin.com/in/your-linkedin</a></p>
       <form action="https://formspree.io/f/your-id" method="POST">
         <input name="name" placeholder="Your name" required />
         <input name="email" type="email" placeholder="Your email" required />
@@ -151,7 +152,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>© <span id="year"></span> Aishwarya Anil Dede • Built with ❤️ • <a href="https://github.com/<your-username>/aishwarya-dede-portfolio">Source</a></p>
+      <p>© <span id="year"></span> Aishwarya Anil Dede • Built with ❤️ • <a href="https://github.com/your-username/aishwarya-dede-portfolio">Source</a></p>
     </div>
   </footer>
 
