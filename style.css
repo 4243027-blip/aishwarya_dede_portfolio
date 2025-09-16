@@ -1,14 +1,16 @@
 /* ===========================
-   Dark Cyber Portfolio Theme
+   Dark Cyberpunk Portfolio Theme
    Author: Aishwarya Anil Dede
    =========================== */
 
 :root {
-  --accent:#00ffe0;   /* neon cyan accent */
-  --bg:#0a0f1c;       /* dark cyber background */
-  --card:#141a29;     /* card background */
-  --muted:#94a3b8;    /* muted gray-blue */
-  --text:#f0f0f0;     /* main text color */
+  --cyan:#00ffe0;         /* neon cyan */
+  --pink:#ff00ff;         /* neon pink */
+  --purple:#9d4edd;       /* neon purple */
+  --bg:#0a0f1c;           /* dark background */
+  --card:#141a29;         /* card background */
+  --muted:#94a3b8;        /* muted text */
+  --text:#f0f0f0;         /* main text */
 }
 
 * {
@@ -26,16 +28,24 @@ body {
 }
 
 /* =====================
-   Background Matrix Glow
+   Background Animated Gradient
    ===================== */
 body::before {
   content: "";
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: url("https://i.ibb.co/zHzWJbR/matrix-bg.gif") repeat;
-  opacity: 0.08;
+  background: linear-gradient(120deg, var(--purple), var(--cyan), var(--pink));
+  background-size: 600% 600%;
+  animation: cyberGradient 15s ease infinite;
+  opacity: 0.07;
   z-index: -1;
+}
+
+@keyframes cyberGradient {
+  0% {background-position:0% 50%;}
+  50% {background-position:100% 50%;}
+  100% {background-position:0% 50%;}
 }
 
 /* =====================
@@ -68,8 +78,8 @@ body::before {
 .brand h1 {
   margin: 0;
   font-size: 22px;
-  color: var(--accent);
-  text-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent);
+  color: var(--pink);
+  text-shadow: 0 0 12px var(--pink), 0 0 24px var(--purple);
 }
 
 .avatar {
@@ -77,8 +87,8 @@ body::before {
   height: 60px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--accent);
-  box-shadow: 0 0 12px var(--accent);
+  border: 2px solid var(--cyan);
+  box-shadow: 0 0 15px var(--cyan);
 }
 
 .nav a {
@@ -90,22 +100,23 @@ body::before {
 }
 
 .nav a:hover {
-  color: var(--accent);
-  text-shadow: 0 0 8px var(--accent);
+  color: var(--cyan);
+  text-shadow: 0 0 8px var(--cyan), 0 0 15px var(--purple);
 }
 
 .cta {
-  background: var(--accent);
+  background: linear-gradient(90deg,var(--cyan),var(--pink));
   color: #000;
   padding: 8px 14px;
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
-  transition: box-shadow .3s;
+  transition: box-shadow .3s, transform .3s;
 }
 
 .cta:hover {
-  box-shadow: 0 0 20px var(--accent);
+  box-shadow: 0 0 25px var(--pink);
+  transform: scale(1.05);
 }
 
 /* =====================
@@ -113,7 +124,7 @@ body::before {
    ===================== */
 .hero {
   padding: 60px 24px;
-  background: radial-gradient(circle at top left, rgba(0,255,224,0.15), transparent 70%);
+  background: radial-gradient(circle at top left, rgba(157, 78, 221,0.2), transparent 70%);
 }
 
 .hero-inner {
@@ -127,9 +138,11 @@ body::before {
 
 .hero h2 {
   margin-top: 0;
-  font-size: 32px;
-  color: var(--accent);
-  text-shadow: 0 0 10px var(--accent);
+  font-size: 34px;
+  background: linear-gradient(90deg,var(--cyan),var(--pink),var(--purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 12px rgba(0,255,224,0.5);
 }
 
 .hero p {
@@ -138,32 +151,33 @@ body::before {
 }
 
 .hero .btn {
-  background: var(--accent);
+  background: linear-gradient(90deg,var(--cyan),var(--pink));
   color: #000;
   padding: 10px 16px;
   border-radius: 8px;
   text-decoration: none;
   margin-right: 8px;
   font-weight: bold;
-  transition: box-shadow .3s;
+  transition: box-shadow .3s, transform .3s;
 }
 
 .hero .btn:hover {
-  box-shadow: 0 0 15px var(--accent);
+  box-shadow: 0 0 18px var(--cyan);
+  transform: scale(1.05);
 }
 
 .hero .btn-outline {
-  border: 1px solid var(--accent);
+  border: 1px solid var(--purple);
   padding: 10px 16px;
   border-radius: 8px;
   text-decoration: none;
-  color: var(--accent);
+  color: var(--purple);
   transition: background .3s, color .3s;
 }
 
 .hero .btn-outline:hover {
-  background: var(--accent);
-  color: #000;
+  background: var(--purple);
+  color: #fff;
 }
 
 /* =====================
@@ -181,17 +195,17 @@ body::before {
   background: var(--card);
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0,255,224,0.05);
+  box-shadow: 0 0 20px rgba(255,0,255,0.05);
   transition: transform .3s, box-shadow .3s;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 25px rgba(0,255,224,0.25);
+  box-shadow: 0 0 25px var(--pink);
 }
 
 .card h3 {
-  color: var(--accent);
+  color: var(--cyan);
   margin-bottom: 8px;
 }
 
@@ -220,8 +234,8 @@ body::before {
 }
 
 .project:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 20px rgba(0,255,224,0.25);
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(157,78,221,0.25);
 }
 
 /* =====================
@@ -233,7 +247,7 @@ body::before {
   display: block;
   overflow: hidden;
   margin: 20px 0;
-  box-shadow: 0 0 25px rgba(0,255,224,0.15);
+  box-shadow: 0 0 30px rgba(255,0,255,0.2);
 }
 
 /* =====================
@@ -256,23 +270,24 @@ body::before {
 
 .contact input:focus,
 .contact textarea:focus {
-  border-color: var(--accent);
+  border-color: var(--cyan);
   outline: none;
-  box-shadow: 0 0 8px var(--accent);
+  box-shadow: 0 0 8px var(--pink);
 }
 
 .contact button {
   padding: 12px 16px;
   border-radius: 8px;
-  background: var(--accent);
+  background: linear-gradient(90deg,var(--cyan),var(--pink));
   color: #000;
   border: 0;
   font-weight: bold;
-  transition: box-shadow .3s;
+  transition: box-shadow .3s, transform .3s;
 }
 
 .contact button:hover {
-  box-shadow: 0 0 15px var(--accent);
+  box-shadow: 0 0 20px var(--purple);
+  transform: scale(1.05);
 }
 
 /* =====================
@@ -288,12 +303,12 @@ body::before {
 }
 
 .site-footer a {
-  color: var(--accent);
+  color: var(--pink);
   text-decoration: none;
 }
 
 .site-footer a:hover {
-  text-shadow: 0 0 8px var(--accent);
+  text-shadow: 0 0 8px var(--pink);
 }
 
 /* =====================
