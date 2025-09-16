@@ -1,47 +1,309 @@
-:root{
-  --accent:#2b6cb0;
-  --bg:#0f1724;
-  --card:#f8fafc;
-  --muted:#6b7280;
-}
-*{box-sizing:border-box}
-body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;line-height:1.5;margin:0;background:white;color:#0b1220}
-.container{max-width:1100px;margin:0 auto;padding:24px}
-.site-header{background:#fff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:20}
-.header-inner{display:flex;align-items:center;justify-content:space-between}
-.brand{display:flex;gap:12px;align-items:center}
-.brand h1{margin:0;font-size:20px}
-.avatar{width:64px;height:64px;border-radius:50%;object-fit:cover}
-.nav a{margin-left:12px;text-decoration:none;color:#111}
-.cta{background:var(--accent);color:white;padding:8px 12px;border-radius:8px;text-decoration:none}
-.hero{padding:36px 0;background:linear-gradient(180deg,#eef6ff 0%, #fff 100%)}
-.hero-inner{display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:center}
-.hero h2{margin-top:0}
-.hero .btn{background:var(--accent);color:white;padding:10px 16px;border-radius:8px;text-decoration:none;margin-right:8px}
-.hero .btn-outline{border:1px solid var(--accent);padding:10px 16px;border-radius:8px;text-decoration:none;color:var(--accent)}
-.cards{display:flex;gap:12px;margin-top:16px}
-.card{flex:1;background:#fff;padding:16px;border-radius:8px;box-shadow:0 6px 18px rgba(11,17,32,0.04)}
-.projects .project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
-.project img{width:100%;height:140px;object-fit:cover;border-radius:8px}
-.models model-viewer{border-radius:8px;background:#fff;display:block;overflow:hidden}
-.contact form{display:grid;gap:8px;max-width:480px}
-.contact input,.contact textarea{padding:12px;border:1px solid #ddd;border-radius:8px}
-.contact button{padding:10px 14px;border-radius:8px;background:var(--accent);color:white;border:0}
-.site-footer{padding:16px 0;border-top:1px solid #eee;margin-top:24px;text-align:center;color:#666}
-@media(max-width:880px){
-  .hero-inner{grid-template-columns:1fr}
-  .nav{display:none}
-}
-script.js
-javascript
-Copy code
-// small helpers
-document.getElementById('year').textContent = new Date().getFullYear();
+/* ===========================
+   Dark Cyber Portfolio Theme
+   Author: Aishwarya Anil Dede
+   =========================== */
 
-// add small smooth scroll for anchors
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click', e=>{
-    e.preventDefault();
-    document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});
-  });
-});
+:root {
+  --accent:#00ffe0;   /* neon cyan accent */
+  --bg:#0a0f1c;       /* dark cyber background */
+  --card:#141a29;     /* card background */
+  --muted:#94a3b8;    /* muted gray-blue */
+  --text:#f0f0f0;     /* main text color */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.5;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* =====================
+   Background Matrix Glow
+   ===================== */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url("https://i.ibb.co/zHzWJbR/matrix-bg.gif") repeat;
+  opacity: 0.08;
+  z-index: -1;
+}
+
+/* =====================
+   Header & Navigation
+   ===================== */
+.site-header {
+  background: rgba(10, 15, 28, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #1f2937;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 24px;
+}
+
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 22px;
+  color: var(--accent);
+  text-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent);
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 12px var(--accent);
+}
+
+.nav a {
+  margin-left: 14px;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  transition: color .3s, text-shadow .3s;
+}
+
+.nav a:hover {
+  color: var(--accent);
+  text-shadow: 0 0 8px var(--accent);
+}
+
+.cta {
+  background: var(--accent);
+  color: #000;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: box-shadow .3s;
+}
+
+.cta:hover {
+  box-shadow: 0 0 20px var(--accent);
+}
+
+/* =====================
+   Hero Section
+   ===================== */
+.hero {
+  padding: 60px 24px;
+  background: radial-gradient(circle at top left, rgba(0,255,224,0.15), transparent 70%);
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 24px;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.hero h2 {
+  margin-top: 0;
+  font-size: 32px;
+  color: var(--accent);
+  text-shadow: 0 0 10px var(--accent);
+}
+
+.hero p {
+  margin: 12px 0;
+  color: var(--muted);
+}
+
+.hero .btn {
+  background: var(--accent);
+  color: #000;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-right: 8px;
+  font-weight: bold;
+  transition: box-shadow .3s;
+}
+
+.hero .btn:hover {
+  box-shadow: 0 0 15px var(--accent);
+}
+
+.hero .btn-outline {
+  border: 1px solid var(--accent);
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--accent);
+  transition: background .3s, color .3s;
+}
+
+.hero .btn-outline:hover {
+  background: var(--accent);
+  color: #000;
+}
+
+/* =====================
+   Cards / About Section
+   ===================== */
+.cards {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1;
+  background: var(--card);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,255,224,0.05);
+  transition: transform .3s, box-shadow .3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0,255,224,0.25);
+}
+
+.card h3 {
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+/* =====================
+   Projects
+   ===================== */
+.projects .project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 16px;
+}
+
+.project {
+  background: var(--card);
+  border-radius: 10px;
+  padding: 16px;
+  transition: transform .3s, box-shadow .3s;
+}
+
+.project img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.project:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(0,255,224,0.25);
+}
+
+/* =====================
+   3D Models
+   ===================== */
+.models model-viewer {
+  border-radius: 12px;
+  background: var(--card);
+  display: block;
+  overflow: hidden;
+  margin: 20px 0;
+  box-shadow: 0 0 25px rgba(0,255,224,0.15);
+}
+
+/* =====================
+   Contact
+   ===================== */
+.contact form {
+  display: grid;
+  gap: 12px;
+  max-width: 480px;
+}
+
+.contact input,
+.contact textarea {
+  padding: 12px;
+  border: 1px solid #1f2937;
+  border-radius: 8px;
+  background: #0f1724;
+  color: var(--text);
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 8px var(--accent);
+}
+
+.contact button {
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #000;
+  border: 0;
+  font-weight: bold;
+  transition: box-shadow .3s;
+}
+
+.contact button:hover {
+  box-shadow: 0 0 15px var(--accent);
+}
+
+/* =====================
+   Footer
+   ===================== */
+.site-footer {
+  padding: 16px 0;
+  border-top: 1px solid #1f2937;
+  margin-top: 24px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.site-footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-shadow: 0 0 8px var(--accent);
+}
+
+/* =====================
+   Responsive
+   ===================== */
+@media(max-width:880px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+  .nav {
+    display: none;
+  }
+}
