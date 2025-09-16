@@ -249,6 +249,17 @@ body::before {
   margin: 20px 0;
   box-shadow: 0 0 30px rgba(255,0,255,0.2);
 }
+.intro-model {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-model model-viewer {
+  max-width: 420px;
+  border-radius: 12px;
+  background: #0f1724;
+  box-shadow: 0 0 30px rgba(0,255,255,0.2);
 
 /* =====================
    Contact
